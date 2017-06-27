@@ -1,40 +1,105 @@
 // bower:scss
 @import "bower_components/bootstrap/scss/bootstrap.scss";
 // endbower
-
-*{
-  padding: 0;
-  margin: 0;
+* {
+    padding: 0;
+    margin: 0;
 }
 
-body{
-  font-family: "Segoue",sans-serif;
-  line-height: 1.6em;
-  color: #666;
-  background:#e1e1e1 url('images/background.jpeg');
-  font-size: 14px;
-}
-a{
-  color: #333;
-  text-decoration: none;
+body {
+    font-family: "Segoue", sans-serif;
+    line-height: 1.6em;
+    color: #666;
+    background: #e1e1e1;
+    background: #e1e1e1 url(../images/creampaper.png);
+    font-size: 14px;
 }
 
-#container{
-  width: 740px;
-  background: #fff;
-  margin: auto;
+a {
+    color: #333;
+    text-decoration: none;
 }
 
-.clearfix{
-  clear: both;
+#container {
+    width: 740px;
+    background: #fff;
+    margin: auto;
 }
 
-header{
-  padding: 30px 20px;
-  background: #f4f4f4;
+.clearfix {
+    clear: both;
+}
 
-  h1{
-    color: black;
-    margin-bottom: 5px;
-  }
+header {
+    padding: 30px 20px;
+    background: lightgray;
+    h1 {
+        color: black;
+        margin-bottom: 5px;
+    }
+    span {
+        color: #dd2826;
+    }
+}
+
+section {
+    padding: 30px 20px;
+}
+
+footer {
+    padding: 20px;
+    background: #4f4f4f;
+    text-align: center;
+}
+
+#search-form {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.fieldcontainer {
+    display: block;
+    position: relative;
+    width: 90%;
+    margin: 0 auto;
+}
+
+.search-field {
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    display: block;
+    width: 45%;
+    padding: 11px 7px;
+    padding-right: 43px;
+    background: #fff;
+    color: #ccc;
+    border: 1px solid #c8c8c8;
+    font-size: 1.6em;
+    border-bottom-color: #d2e2e7;
+    border-radius: 1px;
+    -moz-border-radius: 1px;
+    -webkit-border-radius: 1px;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 6px #f0f0f0;
+    -moz-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 6px #f0f0f0;
+    -weblit-box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.1), 0 0 0 6px #f0f0f0;
+}
+
+#search-btn {
+    position: absolute;
+    right: 360px;
+    top: 5px;
+    height: 32px;
+    width: 32px;
+    cursor: pointer;
+    zoom: 1;
+    border: 0;
+    filter: alpha(opacity=65);
+    opacity: 0.65;
+    background: transparent url(../images/search.png) top left no-repeat;
+}
+
+#search-btn:hover {
+    filter: alpha(opacity=90);
+    opacity: 0.9;
 }

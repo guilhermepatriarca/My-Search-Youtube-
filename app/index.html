@@ -27,42 +27,28 @@
     <!--[if IE]>
       <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
-    
-    <div class="container">
-      <div class="header">
-        <h3 class="text-muted">searchYoutube</h3>
-      </div>
-
-      <div class="jumbotron">
-        <h1 class="display-3">My Search Youtube</h1>
-        <p class="lead">Search all Youtube Videos</p>
-      </div>
+    <div id="container">
+      <header>
+        <h1>Search<span>Vidz</span></h1>
+        <p>Search all Youtube videos</p>
+      </header>
       <section>
-        <form class="form-group" id="search-form" name="search-form" onsubmit="return search()">
-          <div class="fieldContainer">
-          <input type="search" class="form-control" name="" id="query" aria-describedby="helpId" placeholder="Search Youtube...">
-          <input name="search-btn" class="btn btn-primary" type="button" value="">
-          </div>
-        </form>
-
+       	<form id="search-form" name="search-form" onsubmit="return search()">
+					<div class="fieldcontainer">
+						<input type="search" id="query" class="search-field" placeholder="Search YouTube...">
+						<input type="submit" name="search-btn" id="search-btn" value="">
+					</div>
+				</form>
+        
         <ul id="results"></ul>
         <div id="buttons"></div>
       </section>
-      <div class="footer">
-        <p>Guilherme Patriarca @2016</p>
-      </div>
+      <footer>
+        <p>Copyright 2017</p>
+      </footer>
     </div>
     
-    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-    <script>
-      (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-      function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-      e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-      e.src='https://www.google-analytics.com/analytics.js';
-      r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-      ga('create','UA-XXXXX-X');ga('send','pageview');
-    </script>
-
+  
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->
     <script src="/bower_components/jquery/dist/jquery.js"></script>

@@ -45,7 +45,7 @@ function search() {
       q: q,
       type: 'video',
 			maxResults: 9,
-      key: 'AIzaSyCYveG45qqQ7omnuNtkYLSqiLxt-um2fjY'
+      key: 'AIzaSyCYveG45qqQ7omnuNtkYLSqiLxt'
     },
     function (data) {
       var nextPageToken = data.nextPageToken;
@@ -94,7 +94,7 @@ function nextPage() {
       type: 'video',
       pageToken: token,
 			maxResults: 9,
-      key: 'AIzaSyCYveG45qqQ7omnuNtkYLSqiLxt-um2fjY'
+      key: 'AIzaSyCYveG45qqQ7omnuNtkYLSqiLxt'
     },
     function (data) {
       var nextPageToken = data.nextPageToken;

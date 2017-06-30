@@ -20,7 +20,7 @@ function search() {
       q: q,
       type: 'video',
 			maxResults: 9,
-      key: 'AIzaSyCYveG45qqQ7omnuNtkYLSqiLxt'
+      key: 'KEY'
     },
     function (data) {
       var nextPageToken = data.nextPageToken;
@@ -69,7 +69,7 @@ function nextPage() {
       type: 'video',
       pageToken: token,
 			maxResults: 9,
-      key: 'AIzaSyCYveG45qqQ7omnuNtkYLSqiLxt'
+      key: 'KEY'
     },
     function (data) {
       var nextPageToken = data.nextPageToken;
@@ -118,7 +118,7 @@ function prevPage() {
       type: 'video',
       pageToken: token,
 			maxResults: 9,
-      key: 'AIzaSyCYveG45qqQ7omnuNtkYLSqiLxt'
+      key: 'KEY'
     },
     function (data) {
       var nextPageToken = data.nextPageToken;
@@ -163,11 +163,13 @@ function getOutput(item) {
 
   var output = '<div class="col-sm-12 col-md-6 col-lg-4 p-3">' +
     '<div class="card h-100">' +
-    '<img class="card-img-top"  src="' + thumb + '" alt="Card image cap">' +
-    '<div class="card-block">' +
-    '<h4 class="card-title">' + title + '</h4>' +
+    '<img class="card-img-top"  src="'+ thumb +'" alt="Card image cap">' +
+    '<div class="card-block text-size">' +
+    '<h4 class="card-title"><a data-fancybox data-type="iframe" href="http://www.youtube.com/embed/'+videoId+'">' + title + '</a></h4>' +
     '<p class="card-text">' + description + '</p>' +
-    '<a href="#" class="btn btn-primary">Go somewhere</a>' +
+     ' <div class="card-block h-100">'+
+    '<a class="btn btn-primary btn-block" data-fancybox data-type="iframe" href="http://www.youtube.com/embed/'+videoId+'"><i class="fa fa-play" aria-hidden="true"></i> Play</a>' +
+    '</div>'+
     '</div>' +
     '</div>' +
     '</div>';
@@ -179,14 +181,14 @@ function getOutput(item) {
 function getButtons(prevPageToken, nextPageToken, q) {
   if (!prevPageToken) {
     var btnOutput = '<div class="button-container">' +
-      '<button id="next-button" class="paging-button" data-token="' + nextPageToken + '" data-query="' + q + '" onclick="nextPage()">Next Page</button>' +
+      '<button id="next-button" type="button" class="btn btn-info float-right" data-token="' + nextPageToken + '" data-query="' + q + '" onclick="nextPage()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>' +
       '</div>';
   } else {
-    var btnOutput = '<div class="button-container">' +
-      '<button id="prev-button" class="paging-button" data-token="' + prevPageToken + '" data-query="' + q + '"' +
-      'onclick="prevPage()">Prev Page</button>' +
-      '<button id="next-button" class="paging-button" data-token="' + nextPageToken + '" data-query="' + q + '"' +
-      'onclick="nextPage()">Next Page</button>' + '</div>';
+    var btnOutput = '<div class="clearfix">' +
+      '<button id="prev-button" type="button" class="btn btn-info float-left" data-token="' + prevPageToken + '" data-query="' + q + '"' +
+      'onclick="prevPage()"><i class="fa fa-arrow-left" aria-hidden="true"></i></button>' +
+      '<button id="next-button" type="button" class="btn btn-info float-right" data-token="' + nextPageToken + '" data-query="' + q + '"' +
+      'onclick="nextPage()"><i class="fa fa-arrow-right" aria-hidden="true"></i></button>' + '</div>';
   }
   return btnOutput;
 }

@@ -1,30 +1,5 @@
 // Searchbar Handler
 $(function () {
-  var searchField = $('#query');
-  var icon = $('#search-btn');
-
-  // Focus Event Handler
-  $(searchField).on('focus', function () {
-    $(this).animate({
-      width: '100%'
-    }, 400);
-    $(icon).animate({
-      right: '10px'
-    }, 400);
-  });
-
-  // Blur Event Handler
-  $(searchField).on('blur', function () {
-    if (searchField.val() == '') {
-      $(searchField).animate({
-        width: '45%'
-      }, 400, function () {});
-      $(icon).animate({
-        right: '360px'
-      }, 400, function () {});
-    }
-  });
-
   $('#search-form').submit(function (e) {
     e.preventDefault();
   });
@@ -175,7 +150,7 @@ function getOutput(item) {
   var videoId = item.id.videoId;
   var title = item.snippet.title;
   var description = item.snippet.description;
-  var thumb = item.snippet.thumbnails.high.url;
+  var thumb = item.snippet.thumbnails.medium.url;
   var channelTitle = item.snippet.channelTitle;
   var videoDate = item.snippet.publishedAt;
 
@@ -187,7 +162,7 @@ function getOutput(item) {
   //   +'';
 
   var output = '<div class="col-sm-12 col-md-6 col-lg-4 p-3">' +
-    '<div class="card">' +
+    '<div class="card h-100">' +
     '<img class="card-img-top"  src="' + thumb + '" alt="Card image cap">' +
     '<div class="card-block">' +
     '<h4 class="card-title">' + title + '</h4>' +
